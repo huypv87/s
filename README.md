@@ -1,1 +1,1 @@
-"# s" 
+Store static files for my blogger templates

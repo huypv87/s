@@ -237,6 +237,7 @@ $(document).ready(function(){
         // Page
         $("button.mm-btn-load-more").click(function()
         {
+        	return;
                 // get cac thong tin trang co ban
 		var page_cur = $(this).attr('_page_cur');
                 var per_page = $(this).attr('_per_page');

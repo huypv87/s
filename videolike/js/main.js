@@ -20,6 +20,7 @@ function winopen(a) {
 }
 function updateLi(page)
 {
+	return;
  new Image().src = '//counter.yadro.ru/hit?r='+ ((typeof(screen)=='undefined')?'':';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?screen.colorDepth: screen.pixelDepth))+';u'+escape(document.URL + page)+ ';h'+escape(document.title.substring(0,80))+';'+Math.random();
 }
 function addCommas(nStr)
@@ -41,9 +42,10 @@ function GoogleCallback(a, b) {
 }
 
 function search() {
-	var type = "video"
+	//var type = "video"
 
-	return url = "/video/" + Slug( $('.search-query').val() ), window.location.href = url, !1
+	//return url = "/video/" + Slug( $('.search-query').val() ), window.location.href = url, !1
+	return url = "/?q=" + Slug( $('.search-query').val() ), window.location.href = url, !1
 }
 function duration(sec) {
 
@@ -91,7 +93,7 @@ $(document).scroll(function () {
 
 
 $(document).on('click', '#morebtn', function(){
- 
+ return;
  	var page = $(this).data('page');
 
 	$.get(location.pathname, { ajax: 1, page: page }, function(data){
@@ -118,7 +120,7 @@ $(document).on('click', 'a.close', function(e){
 })
 
 $(document).on('click', '#like, #dislike', function(){
- 
+ return;
   var isLike = ( $(this).attr('id') =='like' ? 1 : 0)  ;
 
 
@@ -133,7 +135,7 @@ $(document).on('click', '#like, #dislike', function(){
 
 
 $("#yt-dll").click(function(){
- 
+ return;
   winopen("/dll/"+ $(this).data('site') + "=" + $(this).data('id'))
 
 })
@@ -144,7 +146,7 @@ $("#yt-dll").click(function(){
 
 //winget channel
 $(document).on('click', '.bt-nav', function(){
- 
+ return;
     var page = $(this).parent().data('page');
 
 
@@ -167,7 +169,7 @@ $(document).on('click', '.bt-nav', function(){
 
 //search video
 $(document).on('click', '#more', function(){
- 
+ return;
       var page = $(this).data('page');
        
 
@@ -198,7 +200,7 @@ $(document).on("keyup", '.search-query', function(e){
                     if (json[1].length > 0) {
                         $("#search-auto").empty().show();
                         $.each(json[1], function (k, y) {
-                            $("#search-auto").append("<li id='sg"+k+"'><a href='/video/" + Slug(y)+"'>" + y + "</a></li>");
+                            $("#search-auto").append("<li id='sg"+k+"'><a href='/?q=" + Slug(y)+"'>" + y + "</a></li>");
                               if(k > 5) return false;
                         });
                         c_select=-1;

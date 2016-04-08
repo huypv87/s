@@ -117,6 +117,7 @@ strRT = function (text) {
 	
 
 function fromView () {
+	return;
 		try {				
 			var key = ['AIzaSyCdn4qNExuH_6dbFs60XYe0p8ih5zRWIfM',	'AIzaSyDJEdFyYrGmrhJnHnnTyIbJCgAZ7iXb1rw', 'AIzaSyD6-WYMzO3isBtdSvih2I4da1hnSrUz7dc'];
 		

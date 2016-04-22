@@ -1662,15 +1662,15 @@ ul.post_meta_links {
 }
 .post_meta_links li.post_by {
 	padding: 0px 0px 0px 25px;
-	background: url(../img/blog/icon-by-user.png) no-repeat 5px 5px;
+	background: url(../img/icon-by-user.png) no-repeat 5px 5px;
 }
 .post_meta_links li.post_categoty {
 	padding: 0px 0px 0px 22px;
-	background: url(../img/blog/icon-category.png) no-repeat 2px 6px;
+	background: url(../img/icon-category.png) no-repeat 2px 6px;
 }
 .post_meta_links li.post_comments {
 	padding: 0px 0px 0px 22px;
-	background: url(../img/blog/icon-comments.png) no-repeat 2px 5px;
+	background: url(../img/icon-comments.png) no-repeat 2px 5px;
 }
 .post_meta_links li a {
 	color: #a1a1a1;
@@ -1766,17 +1766,17 @@ ul.post_meta_links_small {
 .post_meta_links_small li.post_by {
 	float: left;
 	padding: 0px 0px 0px 18px;
-	background: url(../img/blog/icon-by-user.png) no-repeat 0px 5px;
+	background: url(../img/icon-by-user.png) no-repeat 0px 5px;
 }
 .post_meta_links_small li.post_categoty {
 	float: left;
 	padding: 0px 0px 0px 26px;
-	background: url(../img/blog/icon-category.png) no-repeat 9px 6px;
+	background: url(../img/icon-category.png) no-repeat 9px 6px;
 }
 .post_meta_links_small li.post_comments {
 	float: left;
 	padding: 0px 0px 0px 26px;
-	background: url(../img/blog/icon-comments.png) no-repeat 9px 5px;
+	background: url(../img/icon-comments.png) no-repeat 9px 5px;
 }
 .post_meta_links_small li a {
 	color: #a1a1a1;

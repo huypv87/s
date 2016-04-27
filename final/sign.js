@@ -22,25 +22,25 @@ function hp_date(iso, sformat) {
     if (typeof sformat === 'undefined')
         sformat = 'dd/mm/YYYY';
     if (sformat == 'dd/mm/YYYY') {
-        return hp_pad(d.getDate()) + delim + hp_pad(d.getMonth() + 1) + delim + d.getFullYear();
+        return hp_pad(d.getDate(), 2) + delim + hp_pad(d.getMonth() + 1, 2) + delim + d.getFullYear();
     } else if (sformat == 'dd-mm-YYYY') {
         delim = '-';
-        return hp_pad(d.getDate()) + delim + hp_pad(d.getMonth() + 1) + delim + d.getFullYear();
+        return hp_pad(d.getDate(), 2) + delim + hp_pad(d.getMonth() + 1, 2) + delim + d.getFullYear();
     } else if (sformat == 'HH:ii') {
-        return hp_pad(d.getHours()) + delimHour + hp_pad(d.getMinutes());
+        return hp_pad(d.getHours(), 2) + delimHour + hp_pad(d.getMinutes(), 2);
     } else if (sformat == 'dd/mm') {
-        return hp_pad(d.getDate()) + delim + hp_pad(d.getMonth() + 1);
+        return hp_pad(d.getDate(), 2) + delim + hp_pad(d.getMonth() + 1, 2);
     } else if (sformat == 'dd-mm') {
         delim = '-';
-        return hp_pad(d.getDate()) + delim + hp_pad(d.getMonth() + 1);
+        return hp_pad(d.getDate(), 2) + delim + hp_pad(d.getMonth() + 1, 2);
     } else if (sformat == 'mm/YYYY') {
-        return hp_pad(d.getMonth() + 1) + delim + d.getFullYear();
+        return hp_pad(d.getMonth() + 1, 2) + delim + d.getFullYear();
     } else if (sformat == 'mm-YYYY') {
         delim = '-';
-        return hp_pad(d.getMonth() + 1) + delim + d.getFullYear();
+        return hp_pad(d.getMonth() + 1, 2) + delim + d.getFullYear();
     } else {
         delim = '/';
-        return hp_pad(d.getDate()) + delim + hp_pad(d.getMonth() + 1) + delim + d.getFullYear();
+        return hp_pad(d.getDate(), 2) + delim + hp_pad(d.getMonth() + 1, 2) + delim + d.getFullYear();
     }
 }
 

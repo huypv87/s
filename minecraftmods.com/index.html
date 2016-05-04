@@ -284,7 +284,22 @@
         <div class='pagination'><span class='current'>1</span><a href='#' class='inactive'>2</a><a href='#' class='inactive'>3</a><a href='#' class='word'>Next &rsaquo;</a><a href='#' class='word'>Last &raquo;</a></div>
 
 
-
+    <footer>
+    Ads_sdA
+    </footer>
+    <script>
+    // Remove responsive ad
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width <= 767) {
+        $('#sidebarad').removeClass('adsbygoogle');
+        window.adsbygoogle.shift(); //Remove an item from the ads array.
+    }
+    </script>
+    <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/xresponsive.js?v=1.2.2"></script>
 
     </section>
 

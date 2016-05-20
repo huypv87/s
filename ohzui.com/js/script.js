@@ -585,6 +585,7 @@ function disableSelect(el){
      }).bind('selectstart', function(){ return false; });
 }
 function increasePageView(){
+	return;
 	jQuery.get(
 		ajaxurl,{
 			'action': 'increase_view',						
@@ -601,6 +602,7 @@ function loadCount(url,element){
 			if(element.length>0)element.html(fbdata[0].share_count);	
 			var totalComment = 0;
 			if(fbdata.length>0 && typeof fbdata[0].commentsbox_count!="undefined") totalComment = fbdata[0].commentsbox_count;
+			return;
 			jQuery.get(
 				ajaxurl,
 				{

@@ -6757,6 +6757,41 @@ An Phước vinh dự được chuyển giao bản quyền sản xuất và tiê
 
 <script>
 // <![CDATA[
+
+
+  var shop = {};
+shop.join = function(str) {
+  var store = [str];
+  return function extend(other) {
+    if (other != null && 'string' == typeof other ) {
+      store.push(other);
+      return extend;
+    }
+    return store.join('');
+  }
+};
+shop.numberFormat = function( number, decimals, dec_point, thousands_sep ){
+  var n = number, prec = decimals;
+  n = !isFinite(+n) ? 0 : +n;
+  prec = !isFinite(+prec) ? 0 : Math.abs(prec);
+  var sep = (typeof thousands_sep == "undefined") ? '.' : thousands_sep;
+  var dec = (typeof dec_point == "undefined") ? ',' : dec_point;
+  var s = (prec > 0) ? n.toFixed(prec) : Math.round(n).toFixed(prec); //fix for IE parseFloat(0.55).toFixed(0) = 0;
+  var abs = Math.abs(n).toFixed(prec);
+  var _, i;
+  if (abs >= 1000) {
+	  _ = abs.split(/\D/);
+	  i = _[0].length % 3 || 3;
+	  _[0] = s.slice(0,i + (n < 0)) +
+			_[0].slice(i).replace(/(\d{3})/g, sep+'$1');
+	  s = _.join(dec);
+  } else {
+	  s = s.replace(',', dec);
+  }
+  return s;
+};
+
+
 var HP_DELIM = '@_@';
 var ARRAY_DELIM = '###';
 var HP_CK_NAME = '_shop_my_products';
@@ -6856,7 +6891,7 @@ moneyTotal += parseInt(line[3]) * parseInt(line[2]);// price * quantity
   }
 
 
-  rows.push('<hr /><div style="text-align: right">Tổng tiền là: <b>' + moneyTotal + '</b></div><hr />');
+  rows.push('<hr /><div style="text-align: right">Tổng tiền là: <b>' + shop.numberFormat(moneyTotal, 0, '.', ',') + 'đ</b></div><hr />');
 
 
 jQuery('#gio-hang').html(rows.join("<br />"));
@@ -6866,14 +6901,58 @@ jQuery('#gio-hang').html('Chưa có sản phẩm nào?!');
 
   }
 
+
+
+
   function quickAddToCart() {
 addToCart(ITEM_ID, ITEM_NAME, 1, ITEM_PRICE_NUM);
-location.href = '/p/gio-hang.html';
+echoCartTop();
+goToByScroll('soluongsanpham');
+//location.href = '/p/gio-hang.html';
+  }
+
+
+ function echoCartTop() {
+var v = jQuery.cookie(HP_CK_NAME);
+//console.log(v);
+if (typeof v !== 'undefined' && v != '' && v != null && v != 'null') {
+
+	var arr = v.split(ARRAY_DELIM);
+var n = arr.length;
+var i;
+var rows = [];
+var moneyTotal = 0, itemTotal = 0;
+  for (i = 0; i < n; i++) {
+var line = arr[i].split(HP_DELIM);
+    rows.push(line[1] + ' - Số lượng = ' + line[2] + ' cái - <a onclick="return confirm(\'Bạn chắc chứ?\')" style="color:red" href="javascript:removeFromCart(\''+line[0]+'\')">Xóa khỏi giỏ</a>');
+
+moneyTotal += parseInt(line[3]) * parseInt(line[2]);// price * quantity
+itemTotal += parseInt(line[2]);
+  }
+
+
+  rows.push('<hr /><div style="text-align: right">Tổng tiền là: <b>' + moneyTotal + '</b></div><hr />');
+jQuery('#soluongsanpham').html(itemTotal);
+jQuery('#tonggia').html(shop.numberFormat(moneyTotal, 0, '.', ','));
+
+
+//jQuery('#gio-hang').html(rows.join("<br />"));
+} else {
+//jQuery('#gio-hang').html('Chưa có sản phẩm nào?!');
+}
+
   }
 
 
 
-
+function goToByScroll(id){
+      // Remove "link" from the ID
+    id = id.replace("link", "");
+      // Scroll
+    $('html,body').animate({
+        scrollTop: $("#"+id).offset().top},
+        'slow');
+}
 
 // ]]>
 
@@ -6887,6 +6966,12 @@ displayCart();
   }
 </script>
   </b:if>
+
+<script>
+echoCartTop();
+</script>
+
+
 
     
 &lt;!--</body>--&gt; &lt;/body&gt;

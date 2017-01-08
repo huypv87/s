@@ -174,7 +174,7 @@ không bắt không ép</h3>
 <li class="col-md-3 col-sm-6">
 <div class="pro-list">
 <div class="saletag">Sale</div>
-<div class="thumb"><a href="#"><img src="images/dnee/dnee-xanh-loveky-sky.jpg" alt=""></a></div>
+<div class="thumb"><a title="Dnee màu xanh" href="images/dnee/dnee-xanh-loveky-sky.jpg" rel="prettyPhoto[gallery1]"><img src="images/dnee/dnee-xanh-loveky-sky.jpg" alt=""></a></div>
 <div class="text">
 <div class="pro-name">
 <h4 style="color:cyan">Xanh - Lovely Sky</h4>
@@ -194,7 +194,7 @@ không bắt không ép</h3>
  
 <li class="col-md-3 col-sm-6">
 <div class="pro-list">
-<div class="thumb"><a href="#"><img src="images/dnee/dnee-hong-honey-star.jpg" alt=""></a></div>
+<div class="thumb"><a title="Dnee màu hồng" href="images/dnee/dnee-hong-honey-star.jpg" rel="prettyPhoto[gallery1]"><img src="images/dnee/dnee-hong-honey-star.jpg" alt=""></a></div>
 <div class="text">
 <div class="pro-name">
 <h4 style="color:#f200ff">Hồng - Honey Star</h4>
@@ -211,7 +211,7 @@ không bắt không ép</h3>
  
 <li class="col-md-3 col-sm-6">
 <div class="pro-list">
-<div class="thumb"><a href="#"><img src="images/dnee/dnee-tim-yellow-moon.jpg" alt=""></a></div>
+    <div class="thumb"><a title="Dnee màu tím" href="images/dnee/dnee-tim-yellow-moon.jpg" rel="prettyPhoto[gallery1]"><img src="images/dnee/dnee-tim-yellow-moon.jpg" alt=""></a></div>
 <div class="text">
 <div class="pro-name">
 <h4 style="color: purple">Tím - Yellow Moon</h4>
@@ -227,7 +227,7 @@ không bắt không ép</h3>
 
 <li class="col-md-3 col-sm-6">
 <div class="pro-list">
-<div class="thumb"><a href="#"><img src="images/dnee/dnee-trang-lively.jpg" alt=""></a></div>
+    <div class="thumb"><a title="Dnee màu trắng" href="images/dnee/dnee-trang-lively.jpg" rel="prettyPhoto[gallery1]"><img src="images/dnee/dnee-trang-lively.jpg" alt=""></a></div>
 <div class="text">
 <div class="pro-name">
 <h4>Trắng - Lively</h4>
@@ -372,4 +372,13 @@ Chủ nhật: _____________nghỉ cho khỏe</p>
 <script src="js/jquery.prettyPhoto.js"></script>  
 <script src="js/custom.js"></script>  
 <script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+
+<script>
+if($(".product-listing").length){
+    $(".product-listing a[rel^='prettyPhoto']").prettyPhoto({social_tools: false, animation_speed:'normal',theme:'facebook',slideshow:3000,autoplay_slideshow:false});
+    //$(".product-listing:first a[data-rel^='prettyPhoto']").prettyPhoto({social_tools: false, animation_speed:'normal',theme:'light_square',slideshow:3000,autoplay_slideshow:false});
+    //$(".product-listing:gt(0) a[data-rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000,hideflash:true});
+}
+</script>
+
 </html>

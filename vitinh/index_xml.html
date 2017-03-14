@@ -483,6 +483,14 @@
                     </div>
 
                 </div>
+                    
+                        
+                 <b:if cond='data:blog.pageType == "item"'>
+                    <!--Item Page-->
+                    <h1>ITEM PAGE</h1>
+                    </b:if>
+                
+                <b:if cond='data:blog.url == data:blog.homepageUrl'>
                 <div class='sixteen wide large twelve wide computer sixteen wide tablet sixteen wide mobile column main-slider' id='main-slider'>
                     <div class='wm-module wm-slider'>
                         <div class='owl-carousel' id='owl_carousel_592'>
@@ -1053,6 +1061,9 @@
                         </div>
                         <!-- end wm-module || tab -->
                     </div>
+                    </b:if>
+                                    
+                                    
                 </div>
             </div>
         </div>
@@ -1077,6 +1088,10 @@
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
                     <div class='sixteen wide large ten wide computer sixteen wide tablet sixteen wide mobile column right-brands'>
                         <div class='wm-module wm-slider'>
                             <div class='owl-carousel' id='owl_carousel_710'>
@@ -1203,9 +1218,12 @@
                         </script>
 
                     </div>
+                    
+                    
                 </div>
             </div>
         </div>
+                                    
         <div class='ui padded grid'>
             <div class='footer  wm-mobile column'>
                 <div class='ui wm equal width pc grid  wm-mobile container' id='footer'>

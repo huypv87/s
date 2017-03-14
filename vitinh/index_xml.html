@@ -59,6 +59,9 @@
         </div>
     </div>
 
+    
+                
+                <b:if cond='true OR data:blog.url == data:blog.homepageUrl'>
     <div class='pusher'>
         <div class='ui padded grid'>
             <div class='support-client zero clear hidden  wm-mobile column'>
@@ -239,6 +242,14 @@
         </div>
     </div>
 
+        <!-- huymain home -->
+        <b:if cond='data:blog.pageType == "item"'>
+                    <!--Item Page-->
+                    <h1>ITEM PAGE</h1>
+                    
+                    </b:if>
+        
+        <b:if cond='data:blog.url == data:blog.homepageUrl'>
     <div class='ui padded grid'>
         <div class='category-slider-area  wm-mobile column'>
             <div class='ui grid  wm-mobile container'>
@@ -485,12 +496,7 @@
                 </div>
                     
                         
-                 <b:if cond='data:blog.pageType == "item"'>
-                    <!--Item Page-->
-                    <h1>ITEM PAGE</h1>
-                    </b:if>
-                
-                <b:if cond='data:blog.url == data:blog.homepageUrl'>
+                 
                 <div class='sixteen wide large twelve wide computer sixteen wide tablet sixteen wide mobile column main-slider' id='main-slider'>
                     <div class='wm-module wm-slider'>
                         <div class='owl-carousel' id='owl_carousel_592'>
@@ -1061,14 +1067,20 @@
                         </div>
                         <!-- end wm-module || tab -->
                     </div>
-                    </b:if>
+                    
                                     
                                     
                 </div>
             </div>
         </div>
+                                    </b:if>    
+                          <!-- main home -->          
+                                    
     </div>
         
+         
+                                    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+                                    <!-- begin brand -->
         <div class='ui padded grid'>
             <div class=' wm-mobile column'>
                 <div class='ui grid  wm-mobile container'>
@@ -1223,6 +1235,9 @@
                 </div>
             </div>
         </div>
+                                    <!-- end brand -->
+                                    </b:if>
+    </b:if>
                                     
         <div class='ui padded grid'>
             <div class='footer  wm-mobile column'>
